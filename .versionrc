@@ -1,6 +1,5 @@
 {
   "infile": "docs/CHANGELOG.md",
-  "header": "# Project Changelog",
   "types": [
     {"type": "chore", "section":"Others", "hidden": false},
     {"type": "revert", "section":"Reverts", "hidden": false},
