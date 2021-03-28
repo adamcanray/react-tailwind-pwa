@@ -1,4 +1,5 @@
 {
+  "infile": "docs/CHANGELOG.md",
   "types": [
     {"type": "chore", "section":"Others", "hidden": false},
     {"type": "revert", "section":"Reverts", "hidden": false},
