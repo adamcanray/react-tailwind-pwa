@@ -14,5 +14,6 @@
     {"type": "build", "section":"Build System", "hidden": false},
     {"type": "ci", "section":"CI", "hidden":false}
   ],
-  "commitUrlFormat ":"{{host}}/{{owner}}/{{repository}}/commit/{{hash}}"
+  "commitUrlFormat ":"{{host}}/{{owner}}/{{repository}}/commit/{{hash}}",
+  "compareUrlFormat  ":"{{host}}/{{owner}}/{{repository}}/compare/{{previousTag}}...{{currentTag}}"
 }
