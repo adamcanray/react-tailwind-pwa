@@ -1,4 +1,18 @@
 # Project Changelog
+### [1.0.1](https://github.com/adamcanray/react-tailwind-pwa/compare/v1.0.0...v1.0.1) (2021-03-28)
+
+
+### Others
+
+* **release:** 0.1.0 ([e64a800](https://github.com/adamcanray/react-tailwind-pwa/commit/e64a8005520cf19b8f73d7b0c9d5276bac9e904c))
+* **release:** 0.1.0 ([58b66b4](https://github.com/adamcanray/react-tailwind-pwa/commit/58b66b4b3e9b195bce837abd835d4ed35cc0aa57))
+
+
+### Docs
+
+* **changelog:** manually edit CHANGELOG.md ([600b8af](https://github.com/adamcanray/react-tailwind-pwa/commit/600b8afe735dbcee8c81c015e2cffaa79d0a4727))
+* **changelog:** test CHANGLOG.md ([36530d6](https://github.com/adamcanray/react-tailwind-pwa/commit/36530d6db26dbbdd45d5fbca6124fcbb6088c9ea))
+
 ## 1.0.0 (2021-03-28)
 
 
