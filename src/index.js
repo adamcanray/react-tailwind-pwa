@@ -1,13 +1,30 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import './assets/css/tailwind.output.css';
 import App from './App';
+import {
+  BrowserRouter as Router
+} from 'react-router-dom';
+import ThemedSuspense from './components/ThemedSuspense';
+import { ScreensProvider } from './context/ScreensContext'
+import { ThemeProvider } from './context/ThemeContext'
+import { SidebarProvider } from './context/SidebarContext'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
 import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ScreensProvider>
+      <ThemeProvider>
+        <SidebarProvider>
+          <Suspense fallback={<ThemedSuspense />}>
+            <Router>
+              <App />
+            </Router>
+          </Suspense>
+        </SidebarProvider>
+      </ThemeProvider>
+    </ScreensProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
