@@ -29,6 +29,9 @@ export default function Login() {
               className={`p-4 py-6 text-white bg-${themeColorVariants}-500 dark:bg-gray-800 md:w-80 md:flex-shrink-0 md:flex md:flex-col md:items-center md:justify-evenly`}
             >
               <div className="p-4 text-4xl font-bold tracking-wider text-center">
+                <div className="flex justify-center">
+                  <img className="w-32" src="https://octopuswaterfall.web.app/img/logo-octopus-1-40px.png" alt="octopuswaterfall-logo"/>
+                </div>
                 <button aria-hidden="true" className="relative focus:outline-none" onClick={toggleTheme}>
                   <div className="w-12 h-6 transition bg-white rounded-full dark:bg-gray-700"></div>
                   <div className={classNames(
@@ -46,9 +49,8 @@ export default function Login() {
                   {themeListRenderer()}
                 </div>
               </div>
-              <p className="mt-6 font-normal text-center text-gray-300 md:mt-0">
-                With the power of K-WD, you can now focus only on functionaries for your digital products, while leaving the
-                UI design on us!
+              <p className="mt-6 font-normal text-center text-gray-200 md:mt-0">
+                Octopus Waterfall Management is a Dashboard Application for managing things on the <a className="underline" href="https://octopuswaterfall.web.app/" target="_blank" rel="noreferrer">Octopus Waterfall</a> Website such as quotes, users, accounts and others.
               </p>
               <p className="flex flex-col items-center justify-center mt-10 text-center">
                 <span>Don't have an account?</span>
