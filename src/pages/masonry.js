@@ -107,12 +107,12 @@ const images = [
 
 function Masonry() {
   return (
-    <div className="divide-y">
+    <div className="divide-y text-gray-700 dark:text-gray-400">
       <div className="py-10">
         <p className="text-center font-bold text-5xl mb-10">Masonry Cards</p>
         <MasonryContainerCards 
           columnGap="4" 
-          columnCount="4"
+          columnCount="3"
         >
           {cards.map((e,i,a)=>{
             return (
@@ -135,7 +135,7 @@ function Masonry() {
           })}
         </MasonryContainerCards>
       </div>
-      <div className="py-10">
+      <div className="py-20">
         <p className="text-center font-bold text-5xl mb-10">Masonry Images</p>
         <MasonryContainerImages>
           {images.map((e,i,a)=>{
