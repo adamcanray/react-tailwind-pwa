@@ -10,7 +10,7 @@ import {
  * setup a HTTP Request
  */
 const myHeaders = new Headers()
-const myRequest = new Request('flowers.jpg', {
+const myRequest = new Request('https://react-tailwind-pwa.vercel.app/api', {
   method: 'GET',
   headers: myHeaders,
   mode: 'cors',
@@ -22,11 +22,15 @@ const Login = lazy(() => import('./pages/Login'))
 const Masonry = lazy(() => import('./pages/Masonry'))
 
 
-
 function App() {
-
+  /**
+   * Context/Hooks/Etc
+   */
   const location = useLocation()
 
+  /**
+   * HTTP Request to `/api/index.js`
+   */
   useEffect(() => {
     if(location.pathname.toLowerCase().includes('app')){
       fetch(myRequest, { 
