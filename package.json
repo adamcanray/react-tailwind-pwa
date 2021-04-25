@@ -34,7 +34,7 @@
     "start": "npm-run-all --sequential build:tailwind generate-tailwind-config --parallel watch:tailwind start:react",
     "start:react": "react-scripts start",
     "prebuild": "npm-run-all --sequential build:tailwind generate-tailwind-config",
-    "build": "set \"CI=false\" && react-scripts build",
+    "build": "CI=false react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
