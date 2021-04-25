@@ -3,6 +3,7 @@ module.exports = (req, res) => {
     body: req.body,
     query: req.query,
     cookies: req.cookies,
-    userAgent: navigator.userAgent,
+    userAgent: req.userAgent,
+    location: req.location,
   })
 }
