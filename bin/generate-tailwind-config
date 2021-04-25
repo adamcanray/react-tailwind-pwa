@@ -1,0 +1,33 @@
+#!/usr/bin/env node
+
+// Docs: https://tailwindcss.com/docs/configuration#referencing-in-java-script
+// Tutorial: https://blog.dennisokeeffe.com/blog/2020-07-26-using-tailwind-theme-anywhere/
+// run: `bin/generate-tailwind-config` or `node bin/generate-tailwind-config`
+
+const fs = require("fs")
+const resolveConfig = require("tailwindcss/resolveConfig")
+const prettier = require("prettier")
+const path = require("path")
+// bring in the Tailwind config
+const tailwindConfig = require("../tailwind.config.js")
+
+const { theme } = resolveConfig(tailwindConfig)
+const themeStr = JSON.stringify(theme)
+const js = `
+const theme  = ${themeStr}
+
+export default theme
+`
+
+try {
+  // write the file to src/tailwindConfig.js after
+  // having prettier format the string for us
+  fs.writeFileSync(
+    path.resolve(process.cwd(), "./src/tailwindConfig.js"),
+    prettier.format(js, { parser: "babel" }),
+    "utf-8"
+  )
+} catch (err) {
+  // uh-oh, something happened here!
+  console.log(err.message)
+}
