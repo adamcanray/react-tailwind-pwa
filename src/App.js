@@ -3,19 +3,7 @@ import {
   Switch,
   Route,
   Redirect,
-  useLocation
 } from 'react-router-dom'
-
-/**
- * setup a HTTP Request
- */
-const myHeaders = new Headers()
-const myRequest = new Request('https://react-tailwind-pwa.vercel.app/api', {
-  method: 'GET',
-  headers: myHeaders,
-  mode: 'cors',
-  cache: 'default',
-})
 
 const Layout = lazy(() => import('./containers/Layout'))
 const Login = lazy(() => import('./pages/Login'))
@@ -23,37 +11,6 @@ const Masonry = lazy(() => import('./pages/Masonry'))
 
 
 function App() {
-  /**
-   * Context/Hooks/Etc
-   */
-  const location = useLocation()
-
-  /**
-   * HTTP Request to `/api/index.js`
-   */
-  useEffect(() => {
-    if(location.pathname.toLowerCase().includes('app')){
-      fetch(myRequest, { 
-        userAgent: navigator.userAgent,
-        location: location.pathname
-      })
-      .then(response => console.log(response))
-      .then(err => {
-        console.log(err)
-      })
-    }
-    else if(location.pathname.toLowerCase().includes('login')){
-      fetch(myRequest, { 
-        userAgent: navigator.userAgent,
-        location: location.pathname
-      })
-      .then(response => console.log(response))
-      .then(err => {
-        console.log(err)
-      })
-    }
-  }, [location])
-
   return (
     <>
       <Switch>

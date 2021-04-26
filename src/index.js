@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom';
 import ThemedSuspense from './components/ThemedSuspense';
 import { ScreensProvider } from './context/ScreensContext'
+import { SniffAgentProvider } from './context/SniffAgentContext'
 import { ThemeProvider } from './context/ThemeContext'
 import { SidebarProvider } from './context/SidebarContext'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration';
@@ -14,17 +15,19 @@ import reportWebVitals from './reportWebVitals';
 
 ReactDOM.render(
   <React.StrictMode>
-    <ScreensProvider>
-      <ThemeProvider>
-        <SidebarProvider>
-          <Suspense fallback={<ThemedSuspense />}>
-            <Router>
-              <App />
-            </Router>
-          </Suspense>
-        </SidebarProvider>
-      </ThemeProvider>
-    </ScreensProvider>
+    <Router>
+      <SniffAgentProvider>
+        <ScreensProvider>
+          <ThemeProvider>
+            <SidebarProvider>
+              <Suspense fallback={<ThemedSuspense />}>
+                  <App />
+              </Suspense>
+            </SidebarProvider>
+          </ThemeProvider>
+        </ScreensProvider>
+      </SniffAgentProvider>
+    </Router>
   </React.StrictMode>,
   document.getElementById('root')
 );
