@@ -16,13 +16,17 @@ export default function Sidebar() {
     themeColorVariants, changeThemeColorVariants,
   } = useContext(ThemeContext)
   const { 
-    isSidebarOpen, toggleSidebar, closeSidebar,
+    isSidebarOpen, toggleSidebar, closeSidebar, openSidebar,
   } = useContext(SidebarContext)
 
   useEffect(() => {
     if(isSidebarOpen){
       if(currentBreakpoint==='md'||currentBreakpoint==='sm'){
         closeSidebar()
+      }
+    }else{
+      if(currentBreakpoint!=='md'&&currentBreakpoint!=='sm'){
+        openSidebar()
       }
     }
   }, [currentBreakpoint])
@@ -32,7 +36,7 @@ export default function Sidebar() {
       'bg-white dark:bg-gray-800 text-gray-500 dark:text-gray-400 font-semibold',
       {
         'w-72': isSidebarOpen,
-        'w-0': !isSidebarOpen,
+        'w-0 overflow-hidden': !isSidebarOpen,
       }
     )}>
       <div className="flex items-center py-4">
