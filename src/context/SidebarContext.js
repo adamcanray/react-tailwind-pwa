@@ -14,11 +14,16 @@ export const SidebarProvider = ({ children }) => {
     setIsSidebarOpen(false)
   }
 
+  function openSidebar() {
+    setIsSidebarOpen(true)
+  }
+
   const memoizedSidebarSetup = useMemo(
     () => ({
       isSidebarOpen,
       toggleSidebar,
       closeSidebar,
+      openSidebar,
     }),
     [isSidebarOpen, toggleSidebar]
   )
