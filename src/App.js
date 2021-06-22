@@ -1,4 +1,4 @@
-import React, { lazy, useEffect } from 'react'
+import React, { lazy } from 'react'
 import {
   Switch,
   Route,
@@ -7,7 +7,6 @@ import {
 
 const Layout = lazy(() => import('./containers/Layout'))
 const Login = lazy(() => import('./pages/Login'))
-const Masonry = lazy(() => import('./pages/Masonry'))
 
 
 function App() {
@@ -15,7 +14,6 @@ function App() {
     <>
       <Switch>
         <Route path="/login" component={Login} />
-        <Route path="/masonry" component={Masonry} />
         <Route path="/app" component={Layout} />
         <Redirect exact from="/" to="/app" />
       </Switch>
