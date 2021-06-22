@@ -1,24 +1,23 @@
-import React, { useContext, useEffect } from 'react'
+import React, { useContext } from 'react'
 import classNames from 'classnames'
 import { ThemeContext } from '../../context/ThemeContext'
-import {ColorVariantsList} from '../../theme/Theme'
+// import {ColorVariantsList} from '../../theme/Theme'
 import { SunIcon, MoonIcon, MenuIcon, AdjusmentsIcon } from '../../assets/icons'
 import { SidebarContext } from '../../context/SidebarContext'
 
 export default function Header() {
   const { 
     theme, toggleTheme,
-    themeColorVariants, changeThemeColorVariants,
   } = useContext(ThemeContext)
   const { 
-    isSidebarOpen, toggleSidebar, closeSidebar,
+    toggleSidebar,
   } = useContext(SidebarContext)
 
-  function themeListRenderer() {
-    return ColorVariantsList.map((t, k) => 
-        <button key={k} data-theme-color-variants={t} className={`rounded-full focus:outline-none mx-1 bg-${t}-500${themeColorVariants === t ? ' is-active' : ''}${themeColorVariants===t?' h-8 w-8 shadow-lg':' h-5 w-5 shadow-md'}`} onClick={changeThemeColorVariants}></button>
-    )
-  }
+  // function themeListRenderer() {
+  //   return ColorVariantsList.map((t, k) => 
+  //       <button key={k} data-theme-color-variants={t} className={`rounded-full focus:outline-none mx-1 bg-${t}-500${themeColorVariants === t ? ' is-active' : ''}${themeColorVariants===t?' h-8 w-8 shadow-lg':' h-5 w-5 shadow-md'}`} onClick={changeThemeColorVariants}></button>
+  //   )
+  // }
 
   // useEffect(()=>{
   //   console.log(isSidebarOpen)

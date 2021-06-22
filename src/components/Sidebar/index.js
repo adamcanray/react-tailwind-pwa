@@ -4,7 +4,6 @@ import { Route, NavLink } from 'react-router-dom'
 import { ScreensContext } from '../../context/ScreensContext'
 import { ThemeContext } from '../../context/ThemeContext'
 import { SidebarContext } from '../../context/SidebarContext'
-import { useWindowDimensions } from '../../hooks'
 import { PresentationChartBarIcon, CollectionIcon, LoginIcon, ViewGridIcon } from '../../assets/icons'
 
 export default function Sidebar() {
@@ -12,11 +11,10 @@ export default function Sidebar() {
     currentBreakpoint
   } = useContext(ScreensContext)
   const { 
-    theme, toggleTheme,
-    themeColorVariants, changeThemeColorVariants,
+    themeColorVariants,
   } = useContext(ThemeContext)
   const { 
-    isSidebarOpen, toggleSidebar, closeSidebar, openSidebar,
+    isSidebarOpen, closeSidebar, openSidebar,
   } = useContext(SidebarContext)
 
   useEffect(() => {
@@ -29,7 +27,7 @@ export default function Sidebar() {
         openSidebar()
       }
     }
-  }, [currentBreakpoint])
+  }, [currentBreakpoint, closeSidebar, isSidebarOpen, openSidebar])
 
   return (
     <div className={classNames(

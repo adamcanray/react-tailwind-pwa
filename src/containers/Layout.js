@@ -1,19 +1,15 @@
-import React, { Suspense } from 'react'
+import React, { Suspense, lazy } from 'react'
 import { Switch, Redirect, Route } from 'react-router-dom'
-import { ThemeContext } from '../context/ThemeContext'
 import Main from './Main'
-import { SunIcon, MoonIcon } from '../assets/icons'
-import classNames from 'classnames'
 import Sidebar from '../components/Sidebar'
 import ThemedSuspense from '../components/ThemedSuspense'
 import Header from '../components/Header'
-import Masonry from '../pages/Masonry'
 import Footer from '../components/Footer'
 
+const Masonry = lazy(() => import('../pages/Masonry'))
+const Cards = lazy(() => import('../pages/Cards'))
+
 export default function Layout() {
-  const { 
-    theme, toggleTheme,
-  } = React.useContext(ThemeContext)
   return (
     <div className="flex h-screen">
       <Sidebar/>
@@ -37,6 +33,11 @@ export default function Layout() {
                   ) : null
                 )
               })} */}
+              <Route
+                exact={true}
+                path={`/app/cards`}
+                render={(props) => <Cards {...props} />}
+              />
               <Route
                 exact={true}
                 path={`/app/masonry`}

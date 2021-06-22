@@ -1,4 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react'
+import React, { useState, useMemo, useEffect } from 'react'
 import tailwindConfig from '../tailwindConfig'
 import { useWindowDimensions } from '../hooks'
 import { StringReplace } from '../helper/index.helper'
@@ -7,7 +7,7 @@ import { StringReplace } from '../helper/index.helper'
 export const ScreensContext = React.createContext()
 
 export const ScreensProvider = ({ children }) => {
-  const { height, width } = useWindowDimensions()
+  const { width } = useWindowDimensions()
   
   const [currentBreakpoint, setCurrentBreakpoint] = useState('')
   const [screenBreakpoints, setScreenBreakpoints] = useState([])
@@ -22,6 +22,7 @@ export const ScreensProvider = ({ children }) => {
         // console.log('the dinamic width still grather than screen, the screen is: ', e)
         setCurrentBreakpoint(e)
       }
+      return false
     })
   })
 

@@ -1,7 +1,4 @@
-import React, { useState, useMemo, useCallback, useEffect } from 'react'
-import tailwindConfig from '../tailwindConfig'
-import { useWindowDimensions } from '../hooks'
-import { StringReplace } from '../helper/index.helper'
+import React, { useState, useMemo, useEffect } from 'react'
 import {
   useLocation
 } from 'react-router-dom'
