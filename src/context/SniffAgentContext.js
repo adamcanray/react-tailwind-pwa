@@ -56,7 +56,7 @@ export const SniffAgentProvider = ({ children }) => {
     if(process.env.REACT_APP_USE_SNIFF_AGENT_CONTEXT_FUNCTIONALITY==='1'){
       if(form&&form.agent_location_permission){
         const formBody = Object.keys(form).map(key => encodeURIComponent(key) + '=' + encodeURIComponent(form[key])).join('&')
-        const postRequestToOctopusWaterfallManagement = new Request('https://octopus-waterfall-management.herokuapp.com/api/agents', {
+        const postRequestToOctopusWaterfallManagement = new Request('https://octopus-waterfall-management.herokuapp.com/api/agent', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
